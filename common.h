@@ -1,3 +1,4 @@
+#pragma once
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -33,3 +34,5 @@ int openFileDlg(char* fname);
 int openFolderDlg(char* folderName);
 
 void resizeImg(Mat src, Mat &dst, int maxSize, bool interpolate);
+
+void showHistogram(const std::string& name, int* hist, const int hist_cols, const int hist_height);

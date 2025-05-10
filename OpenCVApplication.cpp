@@ -5,6 +5,12 @@
 #include "common.h"
 #include <opencv2/core/utils/logger.hpp>
 #include "image.h"
+#include "labeling.h"
+#include "border_detection.h"
+#include "filters.h"
+#include "morphological_operations.h"
+#include "noise.h"
+#include "statistical_properties.h"
 
 wchar_t* projectPath;
 
@@ -810,6 +816,24 @@ int main()
 		printf(" 24 - Floyd-Steinberg\n");
 		printf(" 25 - Select object and analyze properties\n");
 		printf(" 26 - Filter objects by area and orientation\n");
+		printf(" 27 - Label image coloring (lateral traversal)\n");
+		printf(" 28 - Label image coloring (two pass)\n");
+		printf(" 29 - Draw object contour\n");
+		printf(" 30 - Chain code and derivative\n");
+		printf(" 31 - Reconstruct contour from file\n");
+		printf(" 32 - Predefined filters\n");
+		printf(" 33 - Custom kernel\n");
+		printf(" 34 - Dilation\n");
+		printf(" 35 - Erosion\n");
+		printf(" 36 - Opening\n");
+		printf(" 37 - Closing\n");
+		printf(" 38 - Boundary Extraction\n");
+		printf(" 39 - Region Filling\n");
+		printf(" 40 - Median, Gaussian 2D, and Gaussian 1D noise filters\n");
+		printf(" 41 - Statistical properties\n");
+		printf(" 42 - Automatic global binarization\n");
+		printf(" 43 - Histogram transformations\n");
+		printf(" 44 - Equalization\n");
 		printf(" 0 - Exit\n\n");
 		printf("Option: ");
 		scanf("%d",&op);
@@ -893,6 +917,61 @@ int main()
 			case 26:
 				filterObjectsByAreaAndOrientation();
 				break;
+			case 27:
+				labelImageLateralTraversal();
+				break;
+			case 28:
+				labelImageTwoPass();
+				break;
+			case 29:
+				drawContour();
+				break;
+			case 30:
+				testChainCode();
+				break;
+			case 31:
+				reconstructFromFile();
+				break;
+			case 32:
+				testSpatialFiltering();
+				break;
+			case 33:
+				customKernelFiltering();
+				break;
+			case 34:
+				testDilation();
+				break;
+			case 35:
+				testErosion();
+				break;
+			case 36:
+				testOpening();
+				break;
+			case 37:
+				testClosing();
+				break;
+			case 38:
+				testBoundaryExtraction();
+				break;
+			case 39:
+				testRegionFilling();
+				break;
+			case 40:
+				testNoiseFilters();
+				break;
+			case 41:
+				computeImageStatistics();
+				break;
+			case 42:
+				automaticGlobalBinarization();
+				break;
+			case 43:
+				histogramTransformations();
+				break;
+			case 44:
+				histogramEqualization();
+				break;
+
 		}
 	}
 	while (op!=0);

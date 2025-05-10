@@ -95,15 +95,28 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="border_detection.h" />
     <ClInclude Include="common.h" />
+    <ClInclude Include="filters.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="image.h" />
+    <ClInclude Include="labeling.h" />
+    <ClInclude Include="morphological_operations.h" />
+    <ClInclude Include="noise.h" />
+    <ClInclude Include="statistical_properties.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="border_detection.cpp" />
     <ClCompile Include="common.cpp" />
+    <ClCompile Include="filters.cpp" />
+    <ClCompile Include="labeling.cpp" />
+    <ClCompile Include="morphological_operations.cpp" />
+    <ClCompile Include="noise.cpp" />
     <ClCompile Include="OpenCVApplication.cpp" />
     <ClCompile Include="image.cpp" />
+    <ClCompile Include="statistical_properties.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
